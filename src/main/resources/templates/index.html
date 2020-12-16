@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Spring MVC eComm Demo</title>
+    <link rel="stylesheet" type="text/css" href="default.css" media="screen" />
+    <link rel="icon" type="image/x-icon" href="images/email_red.png" />
+    <base href="./">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div id="header-wrapper">
+    <div id="header" class="container">
+        <div id="logo" style="text-align: center;">
+            <h1><span class="icon icon-cog">Spring MVC Demo</span></h1>
+            <div id="menu">
+                <ul>
+                    <li class="current_page_item"><a href="./" accesskey="1" title="Home">Home Page</a></li>
+                    <li class="current_page_item"><a href="dynamic" accesskey="2" title="Details Page">Dynamic Page</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="page-wrapper">
+    <div id="page" class="container">
+        <div class="title">
+            <h2>Home Page</h2>
+        </div>
+        <p>Millions of developers and companies build, ship, and maintain their software on GitHub—the largest and most advanced development platform in the world.</p>
+    </div>
+</div>
+<div class="wrapper" style="text-align: center;">
+    </br>
+    </br>
+    </br>
+    <h3 class="header99">Add / Edit card</h3>
+    <form th:action="@{/dynamic}" method="post">
+        <div class="form-group">
+            <input type="text" class="form-control" th:value="${author.name}" th:name="name">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" th:value="${author.description}" th:name="description">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" th:value="${author.profilePicURL}" th:name="profilePicURL">
+        </div>
+        <div class="form-group">
+            <input type="hidden" th:value="${author.profileID}" th:name="profileID">
+            <input type="hidden" th:value="add_or_edit" th:name="caseType">
+            <button type="submit" class="button99 shadowBox">Submit</button>
+        </div>
+    </form>
+
+    <!--<img src="https://images.unsplash.com/photo-1510082460461-62a0f312e2e6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2250&q=80"
+     alt="" class="image image-full"/> -->
+</div>
+<div id="wrapper2">
+    <div id="tools">
+        <div class="title">
+            <h2>Icon section below</h2>
+        </div>
+        <ul class="tools">
+            <li>
+                <a href="./" class="icon icon-legal"><img src="https://camo.githubusercontent.com/8f245234577766478eaf3ee72b0615e99bb9ef3eaa56e1c37f75692811181d5c/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f66616365626f6f6b2e737667"
+                                                          width=30 height=30></a>
+            </li>
+            <li>
+                <a href="./" class="icon icon-random"><img src="https://camo.githubusercontent.com/35b0b8bfbd8840f35607fb56ad0a139047fd5d6e09ceb060c5c6f0a5abd1044c/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f747769747465722e737667"
+                                                           width=30 height=30></a>
+            </li>
+            <li>
+                <a href="./" class="icon icon-key"><img src="https://camo.githubusercontent.com/c8a9c5b414cd812ad6a97a46c29af67239ddaeae08c41724ff7d945fb4c047e5/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6c696e6b6564696e2e737667"
+                                                        width=30 height=30></a>
+            </li>
+            <li>
+                <a href="./" class="icon icon-wrench"><img src="https://camo.githubusercontent.com/c9dacf0f25a1489fdbc6c0d2b41cda58b77fa210a13a886d6f99e027adfbd358/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f696e7374616772616d2e737667"
+                                                           width=30 height=30></a>
+            </li>
+            <li>
+                <a href="./" class="icon icon-cut"><img src="https://camo.githubusercontent.com/45d2bca536994eea59eb8758b289563d9c4825ad1d661bbcf4800664b949496f/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f736c61636b2e737667" width=30
+                                                        height=30></a>
+            </li>
+            <li>
+                <a href="./" class="icon icon-filter"><img src="https://camo.githubusercontent.com/8b52e302122a31c683c4a9cf8e71d29cc8aba3ebb6a5ac7ae7818b5b14ba1c15/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f676f6f676c652e737667"
+                                                           width=30 height=30></a>
+            </li>
+            <li>
+                <a href="./" class="icon icon-lock"><img src="https://camo.githubusercontent.com/b079fe922f00c4b86f1b724fbc2e8141c468794ce8adbc9b7456e5e1ad09c622/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6769746875622e737667"
+                                                         width=30 height=30></a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<div id="copyright" class="container">
+    <p>&copy; Untitled. All rights reserved. | Photos by <a href="https://unsplash.com/">Unsplash</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
+
+</html>
